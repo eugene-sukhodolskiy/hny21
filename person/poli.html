@@ -4,11 +4,97 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>HNY 2021 | POLI</title>
+	<link rel="stylesheet" href="../libs/normalize.css">
+	<script src="../libs/jquery-3.5.1.min.js"></script>
+	<script src="../js/text.js"></script>
 </head>
 <body>
 
+<link rel="stylesheet" href="../css/poli.css">
+<style>
+	@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&display=swap');
 
+	.text-container{
+		position: fixed;
+		top: 75%;
+		opacity: 0;
+		left: 50%;
+		width: 600px;
+		max-height: 75%;
+		height: 800px;
+		max-width: calc(100% - 20px);
+		margin-left: -300px;
+		font-family: Comfortaa;
 
+		background-color: #fffbef;
+		box-sizing: border-box;
+		padding: 60px 80px;
+		line-height: 40px;
+		font-size: 24px;
+
+		opacity: 0;
+		visibility: hidden;
+		transition-duration: 1.5s;
+		transition-property: top, opacity, visibility;
+	}
+
+	.text-container.show{
+		opacity: 1;
+		top: 25%;
+		visibility: visible;
+	}
+
+	@media (max-width: 600px){
+		.text-container{
+			left: 0;
+			margin-left: 10px;
+			line-height: 30px;
+			font-size: 19px;
+			padding: 30px 40px;
+		}
+
+		.only-pc{
+			display: none;
+		}
+	}
+</style>
+
+<div class="new-year-party">
+	<div class="balloon only-pc"></div>
+	<div class="balloon balloon--happy">
+		<h1 class="balloon__nr">2</h1>	
+	</div>
+	<div class="balloon balloon--new">
+		<h1 class="balloon__nr">0</h1>
+	</div>
+	<div class="balloon balloon--happy">
+		<h1 class="balloon__nr">2</h1>
+	</div>
+	<div class="balloon balloon--new">
+		<h1 class="balloon__nr">1</h1>
+	</div>
+</div>
+
+<div class="text-container">
+	
+</div>
+
+<script>
+	$(document).ready(function(){
+		const textJs = new TextJS();
+		setTimeout(function(){
+			$('.text-container').addClass('show');
+			setTimeout(function(){
+				textJs.type([
+					'Ты у меня одна,\n',
+					'Словно в ночи луна,\n',
+					'Словно в году весна,\n',
+					'Словно в степи сосна.\n'
+				], '.text-container');
+			}, 1500);
+		}, 2500);
+	});
+</script>
 
 	
 </body>
