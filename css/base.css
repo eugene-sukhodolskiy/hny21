@@ -1,0 +1,13 @@
+.footer-link{
+	position: fixed;
+  z-index: 100;
+  bottom: 12px;
+  display: inline-block;
+  color: #222;
+  font-size: 11px;
+  text-decoration: underline;
+  width: 200px;
+  left: 50%;
+  margin-left: -100px;
+  text-align: center;
+}
