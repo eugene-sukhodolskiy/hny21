@@ -30,11 +30,30 @@
 	</div>
 </div>
 
+<style>
+	.text-container{
+		background-image: url('../imgs/soap.png');
+/*		background-size: 50% auto;
+		background-position: center;*/
+	}
+
+	.tiler{
+		position: fixed;
+		z-index: 1000;
+		bottom: 0;
+		left: 5%;
+		max-width: 90%;
+		display: none;
+	}
+</style>
+
 <button class="start-read">Читать</button>
 
 <div class="text-container"></div>
 
 <a href="https://www.youtube.com/watch?v=_XHrWgzWaQw" target="_blank" class="footer-link">Прощай 2020</a>
+
+<img src="../imgs/td.png" class="tiler">
 
 <script>
 	$(document).ready(function(){
@@ -48,13 +67,29 @@
 			$('.text-container').addClass('show');
 			setTimeout(function(){
 				textJs.type([
-					'Хай, жопки!\n',
-					'С нг, ебта, вітаннячка вам от Жени и Марьи, мы вас любим, но это не точно ❤️\n',
-					'Не грустите, не болейте, побольше вам снега и сэкса. Увидимся в новом году 🖤\n\n',
-					'\n'
+					'Олег, С Новым Годом!\n',
+					'В 2021м нужно обязательно больше видиться\n',
+					'а то совсем скоро общих тем не останеться\n',
+					'########\n',
+					'Желаю тебе в 2021м найти интересную цель, чтоб было не скучно жить.\n',
+					'И Лере тоже привет и с НГ!\n\n',
+					'Как же долго оно печатает)'
 				], '.text-container');
 			}, 1500);
 		});
+
+		function td(){
+			setTimeout(function(){
+				console.log('show');
+				$('.tiler').show();
+				setTimeout(function(){
+					$('.tiler').hide();
+				}, 35);
+				td();
+			}, getRandomInt(8000, 27000));
+		}
+
+		td();
 	});
 </script>
 

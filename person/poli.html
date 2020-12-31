@@ -7,102 +7,12 @@
 	<link rel="icon" href="../imgs/c-tree.png" type="image/png">
 	<link rel="stylesheet" href="../libs/normalize.css">
 	<link rel="stylesheet" href="../css/base.css">
+	<link rel="stylesheet" href="../css/bg.css">
+	<link rel="stylesheet" href="../css/paper.css">
 	<script src="../libs/jquery-3.5.1.min.js"></script>
 	<script src="../js/text.js"></script>
 </head>
 <body>
-
-<link rel="stylesheet" href="../css/bg.css">
-
-<style>
-	@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&display=swap');
-	:focus{
-		outline: none;
-	}
-
-	body *{
-		font-family: Comfortaa;
-	}
-
-	.text-container{
-		position: fixed;
-		top: 75%;
-		opacity: 0;
-		left: 50%;
-		width: 600px;
-		max-height: 75%;
-		height: 750px;
-		max-width: calc(100% - 20px);
-		margin-left: -300px;
-		overflow: hidden;
-
-		background-color: #fffbef;
-		background-image: url('../imgs/heart-alpha.png');
-		background-repeat: no-repeat;
-		background-size: 19% auto;
-		background-position: 91% 82%;
-		box-sizing: border-box;
-		padding: 60px 80px;
-		line-height: 40px;
-		font-size: 24px;
-
-		opacity: 0;
-		visibility: hidden;
-		transition-duration: 1.5s;
-		transition-property: top, opacity, visibility;
-	}
-
-	button.start-read{
-		position: fixed;
-		width: 250px;
-		height: 55px;
-		top: 50%;
-		left: 50%;
-		margin-left: -125px;
-		margin-top: -25px;
-		cursor: pointer;
-		text-align: center;
-		opacity: 0;
-		font-size: 24px;
-		background-color: var(--color_balloon);
-		color: #b29600;
-		border: 0;
-		font-weight: bold;
-		visibility: hidden;
-		transition-duration: 1.5s;
-		transition-property: opacity, visibility, color, background-color;
-	}
-
-	.text-container.show{
-		opacity: 1;
-		top: 30%;
-		visibility: visible;
-	}
-
-	button.start-read:hover{
-		color: #fffdf6;
-		background-color: #b29600;
-	}
-
-	button.start-read.show{
-		opacity: 1;
-		visibility: visible;
-	}
-
-	@media (max-width: 600px){
-		.text-container{
-			left: 0;
-			margin-left: 10px;
-			line-height: 28px;
-			font-size: 18px;
-			padding: 30px 40px;
-		}
-
-		.only-pc{
-			display: none;
-		}
-	}
-</style>
 
 <div class="new-year-party">
 	<div class="balloon only-pc"></div>
@@ -122,9 +32,7 @@
 
 <button class="start-read">Читать</button>
 
-<div class="text-container">
-	
-</div>
+<div class="text-container"></div>
 
 <a href="https://www.youtube.com/watch?v=_XHrWgzWaQw" target="_blank" class="footer-link">Прощай 2020</a>
 
