@@ -1,0 +1,46 @@
+@join:../template/head.html;
+@join:../template/ballons.html;
+
+<style>
+	.text-container {
+    line-height: 29px;
+  	font-size: 18px;
+	}
+
+	@media (max-width: 600px){
+		.text-container {
+	    line-height: 23px;
+	    font-size: 16px;
+		}
+	}
+</style>
+
+<button class="start-read">Читать</button>
+
+<div class="text-container"></div>
+
+<a href="https://www.youtube.com/watch?v=_XHrWgzWaQw" target="_blank" class="footer-link">Прощай 2020</a>
+
+<script>
+	$(document).ready(function(){
+		const textJs = new TextJS();
+		setTimeout(function(){
+			$(".start-read").addClass('show');
+		}, 2500);
+
+		$('.start-read').on('click', function(){
+			$(this).removeClass('show');
+			$('.text-container').addClass('show');
+			setTimeout(function(){
+				textJs.type([
+					'Загадочные "Мы" поздравляем загадочных "Вас" в числе трёх штук с загадочным праздником "говно с дымом".\n',
+					'Спешим сообщить о том, что любим вас, и желаем всего наилучшего в этом году!\n',
+					'Ну, а если без шуток, то Аня, поздравляем тебя и твою чудесную семью с нг, желаем вам никогда не болеть, сбычи всех мечт и всего такого прочего.\n\n',
+					'С наилучшими пожеланиями Мари и Евген 🖤\n'
+				], '.text-container');
+			}, 1500);
+		});
+	});
+</script>
+
+@join:../template/footer.html;
