@@ -1,0 +1,20 @@
+{
+    "name": "HNY 2021",
+    "ver": "1.0",
+    "author": "E. Sukhodolskiy",
+    "tags": [
+        "nhy",
+        "html",
+        "css",
+        "js",
+        "personal"
+    ],
+    "type": "web",
+    "main_lang": "html",
+    "status": "open",
+    "project_color": "#309975",
+    "git_url": "https://github.com/eugene-sukhodolskiy/hny21",
+    "release_url": null,
+    "favicon": null,
+    "description": "Project for my friends"
+}
