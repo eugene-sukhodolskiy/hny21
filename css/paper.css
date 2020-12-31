@@ -85,3 +85,10 @@
 			display: none;
 		}
 	}
+
+	@media (max-height: 800px){
+		.text-container{
+			line-height: 34px;
+    	font-size: 22px;
+		}
+	}

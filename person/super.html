@@ -32,17 +32,9 @@
 
 <style>
 	.text-container{
-		background-image: url('../imgs/soap.png');
-	}
-
-	.tiler{
-		position: fixed;
-		z-index: 1000;
-		bottom: 0;
-		left: 5%;
-		max-width: 90%;
-		max-height: 440px;
-		display: none;
+		background-image: url('../imgs/carina.png');
+		background-size: 30% auto;
+    background-position: 85% 82%;
 	}
 </style>
 
@@ -51,8 +43,6 @@
 <div class="text-container"></div>
 
 <a href="https://www.youtube.com/watch?v=_XHrWgzWaQw" target="_blank" class="footer-link">Прощай 2020</a>
-
-<img src="../imgs/td.png" class="tiler">
 
 <script>
 	$(document).ready(function(){
@@ -66,29 +56,15 @@
 			$('.text-container').addClass('show');
 			setTimeout(function(){
 				textJs.type([
-					'Олег, С Новым Годом!\n',
-					'В 2021м нужно обязательно больше видиться\n',
-					'а то совсем скоро общих тем не останеться\n',
-					'########\n',
-					'Желаю тебе в 2021м найти интересную цель, чтоб было не скучно жить.\n',
-					'И Лере тоже привет и с НГ!\n\n',
-					'Как же долго оно печатает)'
+					'Олег, поздравляем тебя с Новым годом!\n',
+					'В новом году тебя ждёт самостоятельная жизнь, и в целом много нового опыта. Это ж прекрасно)\n',
+					'Желаем тебе в новом году хороших авто, много удач и поменьше проблем.\n',
+					'Мы тебя любим, 2021й для тебя будет хорошим годом :)\n',
+					'\n\n########',
+					'Лично я благодарим за терпение а то я люблю поспорить и не все выдерживают :)\n',
 				], '.text-container');
 			}, 1500);
 		});
-
-		function td(){
-			setTimeout(function(){
-				console.log('show');
-				$('.tiler').show();
-				setTimeout(function(){
-					$('.tiler').hide();
-				}, 35);
-				td();
-			}, getRandomInt(8000, 27000));
-		}
-
-		td();
 	});
 </script>
 

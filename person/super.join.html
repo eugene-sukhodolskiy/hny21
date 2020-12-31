@@ -1,0 +1,42 @@
+@join:../template/head.html;
+@join:../template/ballons.html;
+
+<style>
+	.text-container{
+		background-image: url('../imgs/carina.png');
+		background-size: 30% auto;
+    background-position: 85% 82%;
+	}
+</style>
+
+<button class="start-read">Читать</button>
+
+<div class="text-container"></div>
+
+<a href="https://www.youtube.com/watch?v=_XHrWgzWaQw" target="_blank" class="footer-link">Прощай 2020</a>
+
+<script>
+	$(document).ready(function(){
+		const textJs = new TextJS();
+		setTimeout(function(){
+			$(".start-read").addClass('show');
+		}, 2500);
+
+		$('.start-read').on('click', function(){
+			$(this).removeClass('show');
+			$('.text-container').addClass('show');
+			setTimeout(function(){
+				textJs.type([
+					'Олег, поздравляем тебя с Новым годом!\n',
+					'В новом году тебя ждёт самостоятельная жизнь, и в целом много нового опыта. Это ж прекрасно)\n',
+					'Желаем тебе в новом году хороших авто, много удач и поменьше проблем.\n',
+					'Мы тебя любим, 2021й для тебя будет хорошим годом :)\n',
+					'\n\n########',
+					'Лично я благодарим за терпение а то я люблю поспорить и не все выдерживают :)\n',
+				], '.text-container');
+			}, 1500);
+		});
+	});
+</script>
+
+@join:../template/footer.html;
