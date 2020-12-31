@@ -2,9 +2,35 @@ class TextJS {
 	constructor(){
 		this.line = 0;
 		this.count = 0;
+		this.volume = .5;
 		this.result = '';
 		this.text = [];
 		this.textContainer;
+
+		this.audio = {};
+		this.loadAudioFiles();
+	}
+
+	loadAudioFiles(){
+		this.audio.space1 = new Audio();
+		this.audio.space1.src = '../sounds/space.mp3';
+		this.audio.space1.volume = this.volume;
+
+		this.audio.space2 = new Audio();
+		this.audio.space2.src = '../sounds/space2.mp3';
+		this.audio.space2.volume = this.volume;
+
+		this.audio.k1 = new Audio();
+		this.audio.k1.src = '../sounds/k1.mp3';
+		this.audio.k1.volume = this.volume;
+
+		this.audio.k2 = new Audio();
+		this.audio.k2.src = '../sounds/k2.mp3';
+		this.audio.k2.volume = this.volume;
+
+		this.audio.k3 = new Audio();
+		this.audio.k3.src = '../sounds/k3.mp3';
+		this.audio.k3.volume = this.volume - .25;
 	}
 
 	type(textArr, textContainer){
@@ -19,6 +45,11 @@ class TextJS {
 				let letter = this.text[this.line][this.count] == "\n" ? '<br>' : this.text[this.line][this.count];
 				this.result += letter;
 				this.textContainer.html(this.result + '|');
+				if(letter == '<br>' || letter == ' '){
+					this.audio['space' + getRandomInt(1, 3)].play();
+				}else{
+					this.audio['k' + getRandomInt(1, 4)].play();
+				}
 
 
 			this.count++;
@@ -32,10 +63,12 @@ class TextJS {
 				}
 			}
 			this.typeLine();
-		}, getRandomInt(getRandomInt(250*2.5)))
+		}, getRandomInt(85, 600));
 	}
 }
 
-function getRandomInt(max) {
-	return Math.floor(Math.random() * Math.floor(max));
+function getRandomInt(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min)) + min; //Максимум не включается, минимум включается
 }

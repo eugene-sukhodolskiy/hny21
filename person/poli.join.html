@@ -1,7 +1,15 @@
 @join:../template/head.html;
 <link rel="stylesheet" href="../css/poli.css">
+<link rel="shortcut icon" type="image/x-icon" href="../imgs/heart.png"/>
 <style>
 	@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&display=swap');
+	:focus{
+		outline: none;
+	}
+
+	body *{
+		font-family: Comfortaa;
+	}
 
 	.text-container{
 		position: fixed;
@@ -10,12 +18,16 @@
 		left: 50%;
 		width: 600px;
 		max-height: 75%;
-		height: 800px;
+		height: 750px;
 		max-width: calc(100% - 20px);
 		margin-left: -300px;
-		font-family: Comfortaa;
+		overflow: hidden;
 
 		background-color: #fffbef;
+		background-image: url('../imgs/heart-alpha.png');
+		background-repeat: no-repeat;
+		background-size: 19% auto;
+		background-position: 91% 82%;
 		box-sizing: border-box;
 		padding: 60px 80px;
 		line-height: 40px;
@@ -27,9 +39,40 @@
 		transition-property: top, opacity, visibility;
 	}
 
+	button.start-read{
+		position: fixed;
+		width: 250px;
+		height: 55px;
+		top: 50%;
+		left: 50%;
+		margin-left: -125px;
+		margin-top: -25px;
+		cursor: pointer;
+		text-align: center;
+		opacity: 0;
+		font-size: 24px;
+		background-color: var(--color_balloon);
+		color: #b29600;
+		border: 0;
+		font-weight: bold;
+		visibility: hidden;
+		transition-duration: 1.5s;
+		transition-property: opacity, visibility, color, background-color;
+	}
+
 	.text-container.show{
 		opacity: 1;
-		top: 25%;
+		top: 30%;
+		visibility: visible;
+	}
+
+	button.start-read:hover{
+		color: #fffdf6;
+		background-color: #b29600;
+	}
+
+	button.start-read.show{
+		opacity: 1;
 		visibility: visible;
 	}
 
@@ -64,6 +107,8 @@
 	</div>
 </div>
 
+<button class="start-read">Читать</button>
+
 <div class="text-container">
 	
 </div>
@@ -72,16 +117,25 @@
 	$(document).ready(function(){
 		const textJs = new TextJS();
 		setTimeout(function(){
+			$(".start-read").addClass('show');
+		}, 2500);
+
+		$('.start-read').on('click', function(){
+			$(this).removeClass('show');
 			$('.text-container').addClass('show');
 			setTimeout(function(){
 				textJs.type([
+					'Не сиди на холодном (если у пацана брэкэты - не сідай)\n',
+					'Лишній раз не сосі, люблю тебе одну безмежно!\n',
+					'І стіх:\n\n',
 					'Ты у меня одна,\n',
 					'Словно в ночи луна,\n',
 					'Словно в году весна,\n',
-					'Словно в степи сосна.\n'
+					'Словно в степи сосна.\n',
+					'Лю-блю *\n'
 				], '.text-container');
 			}, 1500);
-		}, 2500);
+		});
 	});
 </script>
 
